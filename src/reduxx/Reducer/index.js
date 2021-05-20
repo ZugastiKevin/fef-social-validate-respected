@@ -1,16 +1,17 @@
-import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAILURE, FETCHECURRENT, USERINFO, CURRENTUSERID, ISSUBMITED, FETCHEDALLPOST } from 'reduxx/ActionType';
+import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAILURE, FETCHECURRENT, USERINFO, CURRENTUSERID, ISSUBMITED, FETCHEDALLPOST, SETMOVEORREMOVE } from 'reduxx/ActionType';
 import Cookies from 'js-cookie';
 
 const cookie = Cookies.get('userId');
 const initialState = {
   passed: false,
-  ready: false,
+  ready: cookie ? true : false,
   error: '',
   getCurrent: '',
   info: null,
   currentUser: cookie,
   isPosted: false,
   allPosted: '',
+  show: true,
 };
 
 const reducer = (state = initialState, action) => {
@@ -55,6 +56,11 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         allPosted: action.allPosted,
+      };
+    case SETMOVEORREMOVE:
+      return {
+        ...state,
+        show: action.show,
       };
     default:
       return state;

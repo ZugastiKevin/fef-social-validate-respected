@@ -1,4 +1,4 @@
-import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAILURE, FETCHECURRENT, USERINFO, CURRENTUSERID, ISSUBMITED, FETCHEDALLPOST } from 'reduxx/ActionType';
+import { FETCH_NEWS_REQUEST, FETCH_NEWS_SUCCESS, FETCH_NEWS_FAILURE, FETCHECURRENT, USERINFO, CURRENTUSERID, ISSUBMITED, FETCHEDALLPOST, SETMOVEORREMOVE } from 'reduxx/ActionType';
 
 const fetchNewsRequest = (passed) => ({
   type: FETCH_NEWS_REQUEST,
@@ -33,5 +33,9 @@ const fetchedAllPost = (allPosted) => ({
   type: FETCHEDALLPOST,
   allPosted,
 });
+const setMoveOrRemove = (show) => ({
+  type: SETMOVEORREMOVE,
+  show,
+});
 
-export { fetchNewsRequest, fetchNewsSuccess, fetchNewsFailure, fetchedCurrent, userInfo, getCurrentUserId, isSubmited, fetchedAllPost };
+export { fetchNewsRequest, fetchNewsSuccess, fetchNewsFailure, fetchedCurrent, userInfo, getCurrentUserId, isSubmited, fetchedAllPost, setMoveOrRemove };

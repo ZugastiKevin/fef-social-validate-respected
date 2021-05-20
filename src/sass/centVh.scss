@@ -1,0 +1,76 @@
+body {
+  margin: 0px;
+}
+
+.centVh {
+  height: 100vh;
+  padding: 20px;
+  text-align: justify;
+  transition: all 2s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.centVh.dark {
+  background: #333;
+  color: #f1f1f1;
+}
+
+.centVh.light {
+  background: #f1f1f1;
+  color: #333;
+}
+
+.infos-center {
+  text-align: center;
+}
+
+.showMoves.dark {
+  animation: apparitionsDark 1.5s ease-out;
+}
+
+@keyframes apparitionsDark {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.showMoves.light {
+  animation: apparitionsLight 1.5s ease-out;
+}
+
+@keyframes apparitionsLight {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.showRemoves.dark {
+  animation: apparitionsRemoveDark 1.5s ease-out;
+}
+
+@keyframes apparitionsRemoveDark {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.showRemoves.light {
+  animation: apparitionsRemoveLight 1.5s ease-out;
+}
+
+@keyframes apparitionsRemoveLight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

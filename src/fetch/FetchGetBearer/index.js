@@ -17,7 +17,7 @@ const fetchGetBearer = (finalUrl) => {
         if (element.status === "error") {
           dispatch(fetchNewsFailure(false, element.message));
         } else {
-          dispatch(userInfo(element.username));
+          dispatch(userInfo(element));
         }
       });
   };

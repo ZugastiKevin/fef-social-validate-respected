@@ -1,0 +1,22 @@
+.Btn-Toggle {
+  position: fixed;
+  top: -50px;
+  right: 20px;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 2s linear;
+  background-image: url("../Images/day-and-night.svg");
+}
+
+.Btn-Toggle.goLight {
+  transform: rotate(180deg);
+}
+
+.Btn-Toggle.goDark {
+  filter: invert(100%) sepia(4%) saturate(303%) hue-rotate(226deg)
+    brightness(117%) contrast(89%);
+}

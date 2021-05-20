@@ -9,7 +9,7 @@ const fetchPutBearer = (finalUrl, Data, isSubmit) => {
     fetch(finalUrl, {
       method: "put",
       headers: {
-        Authorization: `Bearer ${cookie}`,
+        "Authorization": `Bearer ${cookie}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(Data),

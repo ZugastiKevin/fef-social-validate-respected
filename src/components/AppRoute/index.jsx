@@ -7,6 +7,8 @@ import Login from 'pages/Login';
 import Profile from 'pages/Profile';
 import User from 'pages/User';
 import Navbar from 'components/Navbar';
+import ThemeContextProvider from 'context/ThemeContext';
+import BtnToggle from 'components/BtnToggle';
 
 const AppRoute = () => {
   const isLogged = useSelector((state) => state.ready);
@@ -24,26 +26,29 @@ const AppRoute = () => {
   );
 
   return (
-    <Router>
-      <main>
-        <Navbar />
-        <Switch>
-          <Route path='/' exact>
-            <Home />
-          </Route>
-          <Route path='/register'>
-            <Register />
-          </Route>
-          <Route path='/login'>
-            <Login />
-          </Route>
-          <PrivateRoute path='/profile' component={Profile} />
-          <Route path='/user/:id'>
-            <User />
-          </Route>
-        </Switch>
-      </main>
-    </Router>
+    <ThemeContextProvider>
+      <BtnToggle />
+      <Router>
+        <main>
+          <Navbar />
+          <Switch>
+            <Route path='/' exact>
+              <Home />
+            </Route>
+            <Route path='/register'>
+              <Register />
+            </Route>
+            <Route path='/login'>
+              <Login />
+            </Route>
+            <PrivateRoute path='/profile' component={Profile} />
+            <Route path='/user/:id'>
+              <User />
+            </Route>
+          </Switch>
+        </main>
+      </Router>
+    </ThemeContextProvider>
   );
 }
 

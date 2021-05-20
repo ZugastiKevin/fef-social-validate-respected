@@ -1,0 +1,119 @@
+body {
+  margin: 0px 0px 0px 150px;
+}
+
+.navbar.dark {
+  background: #333;
+  color: #f1f1f1;
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #222;
+    transition: 0.5s;
+    padding-top: 60px;
+    width: 150px;
+  }
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+  }
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+}
+
+.navbar.light {
+  background: #f1f1f1;
+  color: #333;
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #00000005;
+    transition: 0.5s;
+    padding-top: 60px;
+    width: 150px;
+  }
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #333;
+    display: block;
+    transition: 0.3s;
+    transform: rotate(25deg);
+  }
+  .sidenav a:hover {
+    color: #333;
+  }
+}
+
+.showMove.dark {
+  animation: apparitionDark 1.5s ease-out;
+}
+
+@keyframes apparitionDark {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.showMove.light {
+  animation: apparitionLight 1.5s ease-out;
+}
+
+@keyframes apparitionLight {
+  from {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+    transform: rotate(25deg);
+  }
+}
+
+.showRemove.dark {
+  animation: apparitionRemoveDark 1.5s ease-out;
+}
+
+@keyframes apparitionRemoveDark {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
+
+.showRemove.light {
+  animation: apparitionRemoveLight 1.5s ease-out;
+}
+
+@keyframes apparitionRemoveLight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-200px);
+  }
+}
